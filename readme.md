@@ -1,55 +1,50 @@
-## Hjemmeoppgave by Daniel Sandnes
+# Hjemmeoppgave by Daniel Sandnes
 
-## Installasjon (Windows)
+## Installation (Windows)
 
-Åpne prosjektmappen i Explorer.
-Skriv CMD i winduet, eller åpne CMD og naviger til prosjektmappen.
-Kjør kommandoen '**composer install**'
+Open the project folder in Explorer. Write CMD in the window, or open CMD and navigate to the project folder.
 
-Lag en tom MySQL-database (eventuelt bruk en egen eksisterende), for eksempel:
-Installer WAMP, og gå til localhost/phpmyadmin
-Trykk New og lag databasen 'hjemmeoppgave'
+Run the command **composer install**.
 
-I prosjektmappen: 
-Lag en **.env** fil i roten av prosjektmappen
-kopier inn innhold fra .env.example til .env og erstatt følgende:
+Create an empty MySQL-database (or use your own existing). I used WAMP and localhost/phpmyadmin with MySQL-database 'Hjemmeoppgave'.
 
-**DB_DATABASE=homestead
+Create a new file in the root of the project called **.env**, copy the content from .env.example to .env and replace the following:
 
-DB_USERNAME=homestead
+**DB_DATABASE=homestead**<br/>
+**DB_USERNAME=homestead**<br/>
+**DB_PASSWORD=secret**<br/>
 
-DB_PASSWORD=secret**
+With the details to your own database, for me:
 
-med informasjon til egen MySQL-database, f.eks. :
+**DB_DATABASE=hjemmeoppgave**<br/>
+**DB_USERNAME=root**<br/>
+**DB_PASSWORD=**<br/>
 
-**DB_DATABASE=hjemmeoppgave
-DB_USERNAME=root
-DB_PASSWORD=**
+Save the file and run **php artisan key:generate** to generate a new key for the project.
 
-Lagre filen og kjør følgende fra CMD:
-'**php artisan key:generate**'
+### Fill the database with users
 
-For å fylle database med data til dette prosjektet, kjør følgende kommando fra CMD:
-'**php artisan migrate**'\n
+To add an administrator and a normal user to the database run the two following commands:
+
+'**php artisan migrate**'<br/>
 '**php artisan db:seed**'
 
-Du skal da ha fått 2 brukere: **admin@admin.no** og user@user.no (passord: admin eller user)
-PS: Det går ikke an å lage admin-bruker fra prosjektet selv, dette må lages manuelt i database eller ved seeding.
+This will give you two users: **admin@admin.no** and **user@user.no** (passwords: admin and user).
 
-**_VIKTIG_**: applikasjonen er laget med public-folderen som root, dvs. applikasjonen fungerer kun med denne som root.
-Kjør kommando '**php artisan serve --port:1337**' fra prosjektmappen for å få til dette (kan bruke andre porter også).
-Url-er skal være på formen: 'http://localhost:1337/auth/register'
+PS: you can't create an admin user through the project itself, these have to be made manually in the database or through seeding.
 
-## Hvordan bruke applikasjonen?
+**_IMPORTANT_**: The application is made with the public folder as root, which means the application won't work if you don't set this. Run the command **php artisan serve --port:1337** from the project root (you can use any port).
+If this works URLs should be on the form: 'http://localhost:1337/auth/register'
 
-Dersom du har fulgt installasjonen går du til **http://localhost:1337** for å finne frem forsiden.
-Herfra kan du registrere en ny bruker eller logge inn med eksisterende fra seeding.
-Trykk logg inn og logg inn med e-post: admin@admin.no og passord: admin.
-Du har nå mulighet til å laste opp bilder eller besøke kontrollpanelet.
-Trykk last opp og velg selv om du vil hente bilder fra lokal datamaskin eller Instagram.
-Etter at et bilde er lastet opp kan du besøke kontrollpanelet der du har mulighet til å godkjenne/avslå bilder.
-Etter at du har godkjent et bilde kan du enten besøke forsiden eller /images for å se alle godkjente bilder.
-Ellers er det bare å se seg rundt.
+## How to use the application?
+
+If you followed the installation instructions, go to **http://localhost:1337** to find the front page.
+From here you'll be able to register a new user or login with an existing one.
+Click 'Logg inn' and login with the seeded administrator user: admin@admin.no (password: admin).
+You will now be able to upload images from the upload panel or approve/decline images from the control panel.
+Click 'Last opp' and upload an image from either your local PC or Instagram.
+Go to the control panel and approve the uploaded image, which will now show up on the front page or '/images'.
+Other than that you're free to look around, good luck! :)
 
 ## Laravel PHP Framework
 
