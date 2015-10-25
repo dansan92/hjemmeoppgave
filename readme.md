@@ -34,7 +34,7 @@ This will give you two users: **admin@admin.no** and **user@user.no** (passwords
 PS: you can't create an admin user through the project itself, these have to be made manually in the database or through seeding.
 
 **_IMPORTANT_**: The application is made with the public folder as root, which means the application won't work if you don't set this. Run the command **php artisan serve --port=1337** from the project root (you can use any port).
-If this works URLs should be on the form: 'http://localhost:1337/auth/register'
+If this works, URLs should be on the form: 'http://localhost:1337/auth/register'
 
 ## How to use the application?
 
