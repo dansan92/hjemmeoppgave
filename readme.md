@@ -1,3 +1,54 @@
+## Hjemmeoppgave by Daniel Sandnes
+
+## Installasjon (Windows)
+
+Åpne prosjektmappen i Explorer.
+Skriv CMD i winduet, eller åpne CMD og naviger til prosjektmappen.
+Kjør kommandoen 'composer install'
+
+Lag en tom MySQL-database (eventuelt bruk en egen eksisterende), for eksempel:
+Installer WAMP, og gå til localhost/phpmyadmin
+Trykk New og lag databasen 'hjemmeoppgave'
+
+I prosjektmappen: 
+Lag en .env fil i roten av prosjektmappen
+kopier inn innhold fra .env.example til .env og erstatt følgende:
+
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+
+med informasjon til egen MySQL-database, f.eks. :
+
+DB_DATABASE=hjemmeoppgave
+DB_USERNAME=root
+DB_PASSWORD=
+
+Lagre filen og kjør følgende fra CMD:
+'php artisan key:generate'
+
+For å fylle database med data til dette prosjektet, kjør følgende kommando fra CMD:
+'php artisan migrate'
+'php artisan db:seed'
+
+Du skal da ha fått 2 brukere: admin@admin.no og user@user.no (passord: admin eller user)
+PS: Det går ikke an å lage admin-bruker fra prosjektet selv, dette må lages manuelt i database eller ved seeding.
+
+VIKTIG: applikasjonen er laget med public-folderen som root, dvs. applikasjonen fungerer kun med denne som root.
+Kjør kommando 'php artisan serve --port:1337' fra prosjektmappen for å få til dette (kan bruke andre porter også).
+Url-er skal være på formen: 'http://localhost:1337/auth/register'
+
+## Hvordan bruke applikasjonen?
+
+Dersom du har fulgt installasjonen går du til http://localhost:1337 for å finne frem forsiden.
+Herfra kan du registrere en ny bruker eller logge inn med eksisterende fra seeding.
+Trykk logg inn og logg inn med e-post: admin@admin.no og passord: admin.
+Du har nå mulighet til å laste opp bilder eller besøke kontrollpanelet.
+Trykk last opp og velg selv om du vil hente bilder fra lokal datamaskin eller Instagram.
+Etter at et bilde er lastet opp kan du besøke kontrollpanelet der du har mulighet til å godkjenne/avslå bilder.
+Etter at du har godkjent et bilde kan du enten besøke forsiden eller /images for å se alle godkjente bilder.
+Ellers er det bare å se seg rundt.
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
