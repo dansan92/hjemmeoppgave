@@ -6,7 +6,7 @@ Open the project root with Windows Explorer (filutforsker) and write CMD in the 
 
 Run the command **composer install**.
 
-Create an empty MySQL-database (or use your own existing). I used WAMP and localhost/phpmyadmin with MySQL-database 'Hjemmeoppgave'.
+Create an empty MySQL-database (or use your an existing one). I used WAMP and localhost/phpmyadmin with MySQL-database 'Hjemmeoppgave'.
 
 Create a new file in the root of the project called **.env**, copy the content from .env.example to .env and replace the following:
 
