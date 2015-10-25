@@ -2,7 +2,7 @@
 
 ## Installation (Windows)
 
-Open the project folder in Explorer. Write CMD in the window, or open CMD and navigate to the project folder.
+Open the project root with Windows Explorer (filutforsker) and write CMD in the window, or open CMD and navigate to the project folder.
 
 Run the command **composer install**.
 
@@ -14,7 +14,7 @@ Create a new file in the root of the project called **.env**, copy the content f
 **DB_USERNAME=homestead**<br/>
 **DB_PASSWORD=secret**<br/>
 
-With the details to your own database, for me:
+With the details to your own database, for me this was the following:
 
 **DB_DATABASE=hjemmeoppgave**<br/>
 **DB_USERNAME=root**<br/>
@@ -26,25 +26,25 @@ Save the file and run **php artisan key:generate** to generate a new key for the
 
 To add an administrator and a normal user to the database run the two following commands:
 
-'**php artisan migrate**'<br/>
-'**php artisan db:seed**'
+**php artisan migrate**<br/>
+**php artisan db:seed**
 
 This will give you two users: **admin@admin.no** and **user@user.no** (passwords: admin and user).
 
 PS: you can't create an admin user through the project itself, these have to be made manually in the database or through seeding.
 
-**_IMPORTANT_**: The application is made with the public folder as root, which means the application won't work if you don't set this. Run the command **php artisan serve --port:1337** from the project root (you can use any port).
+**_IMPORTANT_**: The application is made with the public folder as root, which means the application won't work if you don't set this. Run the command **php artisan serve --port=1337** from the project root (you can use any port).
 If this works URLs should be on the form: 'http://localhost:1337/auth/register'
 
 ## How to use the application?
 
 If you followed the installation instructions, go to **http://localhost:1337** to find the front page.
-From here you'll be able to register a new user or login with an existing one.
+From there you'll be able to register a new user or login with an existing one.
 Click 'Logg inn' and login with the seeded administrator user: admin@admin.no (password: admin).
 You will now be able to upload images from the upload panel or approve/decline images from the control panel.
 Click 'Last opp' and upload an image from either your local PC or Instagram.
 Go to the control panel and approve the uploaded image, which will now show up on the front page or '/images'.
-Other than that you're free to look around, good luck! :)
+Other than that you're free to do as you wish, good luck! :)
 
 ## Laravel PHP Framework
 
