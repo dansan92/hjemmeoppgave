@@ -28,7 +28,7 @@ Lagre filen og kjør følgende fra CMD:
 '**php artisan key:generate**'
 
 For å fylle database med data til dette prosjektet, kjør følgende kommando fra CMD:
-'**php artisan migrate**'
+'**php artisan migrate**'\n
 '**php artisan db:seed**'
 
 Du skal da ha fått 2 brukere: **admin@admin.no** og user@user.no (passord: admin eller user)
