@@ -15,7 +15,9 @@ Lag en **.env** fil i roten av prosjektmappen
 kopier inn innhold fra .env.example til .env og erstatt følgende:
 
 **DB_DATABASE=homestead
+
 DB_USERNAME=homestead
+
 DB_PASSWORD=secret**
 
 med informasjon til egen MySQL-database, f.eks. :
